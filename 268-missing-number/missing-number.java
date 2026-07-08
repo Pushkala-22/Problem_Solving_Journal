@@ -1,11 +1,16 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int s=0;
+        int k=0;
+        int l=0;
         int n=nums.length;
-        for(int i=0;i<n;i++){
-            s+=nums[i];
+        for(int i=0;i<=n;i++){
+            k^=i;
         }
-        int k=n*(n+1)/2;
-        return k-s;
+        for(int i:nums){
+            l^=i;
+
+        }
+       
+        return k^l;
     }
 }
